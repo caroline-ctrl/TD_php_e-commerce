@@ -28,11 +28,13 @@
                 <?php $lesCategories = $connection->query("SELECT images, descriptions, prix FROM produit WHERE idCategorie = 'bra'");
                     while ($test = $lesCategories->fetch()) { ?>
                         <div class="col-4">
-                            <br><img id="img1" src="<?= $test['images'] ?>" alt="affiche image"><br>
+                        <form action="index.php?uc=gererPanier" method="post">
+                            <br><label for=""><img id="img1" src="<?= $test['images'] ?>" alt="affiche image"></label><br>
                             <?php
-                            echo $test['descriptions'] . '<br>';
-                            echo $test['prix'] . ' € <br>';?>
+                            echo '<label for="description">' . $test['descriptions'] . '</label><br>';
+                            echo '<label for="description">' . $test['prix'] . ' € </label><br>';?>
                             <button style='font-size:24px'><i class='fas fa-cart-arrow-down'></i></button><hr><br><br>
+                            </form>
                             </div>
                         <?php } ?>
                     </div>

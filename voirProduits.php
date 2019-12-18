@@ -29,10 +29,12 @@
                 <?php
                 while ($donnees = $recup->fetch()) { ?>
                     <div class="col-4">
-                        <br><img id="img1" src="<?= $donnees['images'] ?>" alt="affiche image"><br>
-                        <?php echo $donnees['descriptions'] . '<br>';
-                        echo $donnees['prix'] . ' €<br> ';?>
+                        <form action="index.php?uc=gererPanier" method="post">
+                        <br><label for="image"><img id="img1" src="<?= $donnees['images'] ?>" alt="affiche image"></label><br>
+                        <?php echo '<label for="description">' . $donnees['descriptions'] . '</label><br>';
+                        echo '<label for="description">' . $donnees['prix'] . ' €</label><br> ';?>
                         <button style='font-size:24px'><i class='fas fa-cart-arrow-down'></i></button><hr><br><br>
+                        </form>
                     </div>
                 <?php } ?>
             </div>

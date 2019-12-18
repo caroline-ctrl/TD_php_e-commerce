@@ -16,7 +16,7 @@
 
 
     <div class="container-fluid">
-    <div class="row">
+        <div class="row">
             <div class="offset-3 col-4 choix">
                 <a href="index.php?uc=boite"><button type="button" class="btn btn-success">Boites</button></a>
                 <a href="index.php?uc=fiole"><button type="button" class="btn btn-success">Fioles</button></a>
@@ -27,18 +27,21 @@
         <div class="col-12">
             <div class="row">
                 <?php $lesCategories = $connection->query("SELECT images, descriptions, prix FROM produit WHERE idCategorie = 'boi'");
-                    while ($test = $lesCategories->fetch()) { ?>
-                        <div class="col-4">
-                            <br><img id="img1" src="<?= $test['images'] ?>" alt="affiche image"><br>
+                while ($test = $lesCategories->fetch()) { ?>
+                    <div class="col-4">
+                        <form action="index.php?uc=gererPanier" method="post">
+                            <br><label for=""><img id="img1" src="<?= $test['images'] ?>" alt="affiche image"></label><br>
                             <?php
-                            echo $test['descriptions'] . '<br>';
-                            echo $test['prix'] . ' € <br>';?>
-                            <button style='font-size:24px'><i class='fas fa-cart-arrow-down'></i></button><hr><br><br>
-                            </div>
-                        <?php } ?>
+                            echo '<label for="description">' . $test['descriptions'] . '</label><br>';
+                            echo '<label for="description">' . $test['prix'] . ' € </label><br>'; ?>
+                            <button style='font-size:24px'><i class='fas fa-cart-arrow-down'></i></button>
+                            <hr><br><br>
+                        </form>
                     </div>
-                </div>
+                <?php } ?>
             </div>
+        </div>
+    </div>
 
 
 
