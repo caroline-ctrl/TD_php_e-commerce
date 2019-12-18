@@ -32,7 +32,8 @@
                             <br><img id="img1" src="<?= $test['images'] ?>" alt="affiche image"><br>
                             <?php
                             echo $test['descriptions'] . '<br>';
-                            echo $test['prix'] . ' € <hr><br><br>';?>
+                            echo $test['prix'] . ' € <br>';?>
+                            <button style='font-size:24px'><i class='fas fa-cart-arrow-down'></i></button><hr><br><br>
                             </div>
                         <?php } ?>
                     </div>

@@ -21,14 +21,18 @@
                 <a href="index.php?uc=bracelet"><button type="button" class="btn btn-success">Bracelets</button></a>
             </div>
         </div>
+
+
+
         <div class="col-12">
             <div class="row">
                 <?php
                 while ($donnees = $recup->fetch()) { ?>
                     <div class="col-4">
-                        <br><a href="index.php?uc=product"><img id="img1" src="<?= $donnees['images'] ?>" alt="affiche image"></a><br>
+                        <br><img id="img1" src="<?= $donnees['images'] ?>" alt="affiche image"><br>
                         <?php echo $donnees['descriptions'] . '<br>';
-                        echo $donnees['prix'] . ' € <hr><br><br>'; ?>
+                        echo $donnees['prix'] . ' €<br> ';?>
+                        <button style='font-size:24px'><i class='fas fa-cart-arrow-down'></i></button><hr><br><br>
                     </div>
                 <?php } ?>
             </div>
