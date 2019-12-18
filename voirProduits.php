@@ -16,9 +16,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="offset-3 col-4 choix">
-                <a href="index.php?uc=accueil"><button type="button" class="btn btn-success">Boite</button></a>
-                <a href="index.php?uc=voirProduits&action=voirCategorie"><button type="button" class="btn btn-success">Fiole</button></a>
-                <a href="index.php?uc=gererPanier"><button type="button" class="btn btn-success">Bracelet</button></a>
+                <a href="index.php?uc=boite"><button type="button" class="btn btn-success">Boites</button></a>
+                <a href="index.php?uc=fiole"><button type="button" class="btn btn-success">Fioles</button></a>
+                <a href="index.php?uc=bracelet"><button type="button" class="btn btn-success">Bracelets</button></a>
             </div>
         </div>
         <div class="col-12">
@@ -26,7 +26,7 @@
                 <?php
                 while ($donnees = $recup->fetch()) { ?>
                     <div class="col-4">
-                        <br><a href="panier.php?page=product&id=<?= $product['id'] ?>"><img id="img1" src="<?= $donnees['images'] ?>" alt="affiche image"></a><br>
+                        <br><a href="index.php?uc=product"><img id="img1" src="<?= $donnees['images'] ?>" alt="affiche image"></a><br>
                         <?php echo $donnees['descriptions'] . '<br>';
                         echo $donnees['prix'] . ' € <hr><br><br>'; ?>
                     </div>
@@ -34,6 +34,12 @@
             </div>
         </div>
     </div>
+
+    
+
+   
+
+
 
     <?php
 
@@ -64,6 +70,6 @@
     //         include('vues/produits.php');
     // }
 
-    ?>
+   ?>
 
     

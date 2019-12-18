@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +37,7 @@
             <div class="col-2">
                 <div id="nav">
                     <a href="index.php?uc=accueil"><button type="button" class="btn btn-info">Accueil</button></a>
-                    <a href="index.php?uc=voirProduits&action=voirCategorie"><button type="button" class="btn btn-info">Catalogue</button></a>
+                    <a href="index.php?uc=voirProduits"><button type="button" class="btn btn-info">Catalogue</button></a>
                     <a href="index.php?uc=gererPanier"><button type="button" class="btn btn-info">Panier</button></a>
                     <a href="index.php?uc=administrer"><button type="button" class="btn btn-info">Administrer</button></a>
                 </div>
@@ -59,6 +63,15 @@
                     break;
                 case 'administrer':
                     include('gestionProduits.php');
+                break;
+                case 'boite':
+                    include('categories/boite.php');
+                break;
+                case 'fiole':
+                    include('categories/fiole.php');
+                break;
+                case 'bracelet':
+                    include('categories/bracelet.php');
                 break;
                     default:
                     include('erreur.php');
